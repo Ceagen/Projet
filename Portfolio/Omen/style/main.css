@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'GraveBlade';
+    src: url(/Omen/fonts/Graveblade\ W00\ Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'God-Of-War';
+    src: url('/Omen/fonts/GODOFWAR.TTF') format('truetype');
+}
+body {
+    background-image: url(/Omen/images/valorant_wallpaper_hd_neon_sign_by_eclipsewideedit_df2wiqo-pre.png)/*linear-gradient(-6deg, #3A41C6, #3D3BBB, #4634A7, #4C2C96, #512888, #7F00FF, #0b253e)*/;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    /*min-height: 100vh;*/
+    /*background-size: 400% 400%;
+    animation: bg 20s ease-in-out infinite;*/
+}
+/*@keyframes bg {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}*/
+nav {
+    background-color: transparent;
+}
+.valo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 50px;
+    filter: drop-shadow(10px 10px 5px white);
+    padding: 0 5px;
+}
+.valo img {
+    width: 40px;
+    height: auto;
+}
+.nav-div2 {
+    display: block;
+    width: fit-content;
+}
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li {
+    height: 50px;
+}
+nav a {
+    height: 100%;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-family: 'graveblade', sans-serif;
+    font-size: larger;
+    cursor: crosshair;
+}
+li:first-child {
+    margin-right: auto;
+}
+.div1 h1 {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-family: 'graveblade', sans-serif;
+    font-size: 250px;
+    color: rgba(255, 255, 255, 0.808);
+    -webkit-text-stroke: 2px white;
+}
+.mainContainer {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    max-width: 90%;
+    max-height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.div1 {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+.div1 .omen {
+    position: absolute;
+    max-width: 90%;
+    max-height: 90%;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(10px 10px 10px black);
+}
+.modal1{
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal2{
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal3{
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal4{    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*transition: all 0.3s ease-in-out;*/
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal1.open{
+    opacity: 1;
+    z-index: 10;
+}
+.modal2.open{
+    opacity: 1;
+    z-index: 10;
+}
+.modal3.open{
+    opacity: 1;
+    z-index: 10;
+}
+.modal4.open{
+    opacity: 1;
+    z-index: 10;
+}
+.modal1 .intro1{
+    text-align: center;
+    border-radius: 5px;
+    background-size: 100%;
+    width: 80vh;
+    color: white;
+    font-family: 'God-Of-War', sans-serif;
+}
+.modal2 .intro2{
+    text-align: center;
+    border-radius: 5px;
+    background-size: 100%;
+    width: 80vh;
+    color: white;
+    font-family: 'God-Of-War', sans-serif;
+}
+.modal3 .intro3{
+    text-align: center;
+    border-radius: 5px;
+    background-size: 100%;
+    width: 80vh;
+    color: white;
+    font-family: 'God-Of-War', sans-serif;
+}
+.modal4 .intro4{
+    text-align: center;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 80vh;
+    color: white;
+    font-family: 'God-Of-War', sans-serif;
+}
+.modal1 .intro1 video{
+    border-radius: 10px;
+}
+.modal2 .intro2 video{
+    border-radius: 10px;
+}
+.modal3 .intro3 video{
+    border-radius: 10px;
+}
+.modal4 .intro4 video{
+    border-radius: 10px;
+}
+.omen img {
+    width: 100%;
+    height: auto;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    perspective: 1000px; /* Ensure 3D space is created */
+    z-index: 1;
+}
+.banner .slider {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    top: 30%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    animation: autoRun 20s linear infinite;
+}
+@keyframes autoRun {
+    from {
+        transform: rotateX(-25deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(-25deg) rotateY(360deg);
+    }
+}
+.banner .slider .item {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    /*background-color: rgb(47, 44, 94);*/
+    transform:
+        rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+        translateZ(400px);
+}
+.banner .slider .item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}

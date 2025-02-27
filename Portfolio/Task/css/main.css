@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+}
+.main-nav{
+    background-color: black;
+    color: white;
+}
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+nav li{
+    height: 50px;
+}
+nav a{
+    height: 100%;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    text-decoration: none;
+    color: aliceblue;
+}
