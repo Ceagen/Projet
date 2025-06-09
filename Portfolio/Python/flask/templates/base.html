@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceagen webFlask</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Ceagen</div>
+        <ul class="nav-links">
+            <li><a href="{{url_for('index')}}">Accueil</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <!--<a href="https://github.com/Ceagen/Slots"><option value="slots" target="_blank">Slots</option></a>
+    <a href="https://github.com/Ceagen/Projet/tree/main/Portfolio"><option value="html/css/js">html/css/js</option></a>-->
+    {% block body %}{% endblock %}
+</body>
+</html>
