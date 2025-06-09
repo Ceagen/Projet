@@ -56,7 +56,10 @@ body {
 .footer-div-main{
     display: grid;
     grid-template-columns: 50vh 50vh;
+    gap: 20vh;
+    width: 100vh;
     color: white;
+    margin: auto;
 }
 .footer-div{
     width: fit-content;
@@ -71,10 +74,10 @@ body {
     margin-bottom: 1rem;
 }
 .footer-ul-icons {
-    font-size: 20px;
+    font-size: 25px;
     display: flex;
     gap: 1rem;
-    align-items: center;
+    justify-content: center; 
 }
 .fa-tiktok:hover{
     filter:
@@ -86,9 +89,17 @@ body {
     drop-shadow(-4px -2px 2px #DE3163)
     drop-shadow(4px 1px 2px #BF40BF);
 }
+.fa-envelope:hover{
+    filter: drop-shadow(5px 2px 2px rgb(32, 111, 214));
+}
+.fa-twitch:hover{
+    filter: drop-shadow(5px 2px 2px #BF40BF);
+}
 #icon{
     color: white;
 }
 .footer-p{
     color: white;
+    justify-self: center;
+    padding-top: 10px;
 }
