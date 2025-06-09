@@ -19,6 +19,7 @@ class todo(db.Model):  # creating the columns for the database and specifying th
 @app.route('/')
 def index():
     return render_template('index.html')
+
 @app.route('/test', methods=['POST', 'GET'])
 def test():
     if request.method == 'POST':
