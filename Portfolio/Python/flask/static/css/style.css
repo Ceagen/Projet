@@ -31,20 +31,19 @@ body {
     color: #00bcd4;
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
-
 .hamburger span {
     width: 25px;
     height: 3px;
     background-color: white;
 }
+/*test css*/
 .content{
     text-align: center;
+    color: white;
+}
+.content,a{
+    text-decoration: none;
+    color: white;
 }
 .content-table{
     margin-left: auto;
@@ -53,13 +52,26 @@ body {
 .change{
     text-decoration: none;
 }
+/*index css*/
+.index-vid{
+    justify-self: center;
+    width: 100vh;
+}
+.vid{
+    width: 100vh;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+/*Footer css*/
 .footer-div-main{
     display: grid;
     grid-template-columns: 50vh 50vh;
     gap: 20vh;
     width: 100vh;
     color: white;
-    margin: auto;
+
+    margin: 0 auto; /* Centers it in the document flow */
+    margin-top: 20px;
 }
 .footer-div{
     width: fit-content;
@@ -100,6 +112,6 @@ body {
 }
 .footer-p{
     color: white;
-    justify-self: center;
     padding-top: 10px;
+    text-align: center;
 }

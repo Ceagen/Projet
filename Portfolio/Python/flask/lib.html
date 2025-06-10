@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Slim Glow Zig-Zag Path</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: #ddd;
+      font: 16px/1.6 system-ui, sans-serif;
+    }
+
+    main {
+      position: relative;
+      min-height: 2500px;
+      isolation: isolate;
+
+      /* Fading at top/bottom */
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0,
+        black 12vh,
+        black calc(100% - 12vh),
+        transparent 100%
+      );
+      mask-image: linear-gradient(
+        to bottom,
+        transparent 0,
+        black 12vh,
+        black calc(100% - 12vh),
+        transparent 100%
+      );
+    }
+
+    .glow-line {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      pointer-events: none;
+      z-index: 1;
+
+      /* Fade bottom of the glow */
+      mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+    }
+
+    .glow-line svg {
+      width: 100%;
+      height: 120px;
+    }
+
+    .glow-line path {
+      fill: none;
+      stroke: #00ffff;
+      stroke-width: 2; /* slim glow */
+      filter:
+        drop-shadow(0 0 3px #00ffff)
+        drop-shadow(0 0 8px #00ffff);
+    }
+
+    section {
+      position: relative;
+      max-width: 60ch;
+      margin: 6rem auto;
+      z-index: 2;
+    }
+
+    h1, h2 {
+      color: #fff;
+      margin: 0 0 0.25em;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <!-- Only glowing zig-zag, no base line -->
+    <div class="glow-line" id="glow">
+      <svg viewBox="0 0 100 120" preserveAspectRatio="xMidYMin slice">
+        <path d="
+          M50 0
+          L50 40
+          L90 40
+          L90 80
+        " />
+      </svg>
+    </div>
+
+    <!-- Sample content for scrolling -->
+    <section>
+      <h1>Slim Glow Zig-Zag</h1>
+      <p>The only visible part is the glow, sliding down as you scroll with sharp horizontal turns.</p>
+    </section>
+    <section><h2>Section 2</h2><p>Scroll down to see the glow follows this zig-zag.</p></section>
+    <section><h2>Section 3</h2><p>Continuing the zig-zag motion.</p></section>
+    <section><h2>Section 4</h2><p>Glow is slim and subtle.</p></section>
+    <section><h2>Section 5</h2><p>Final section with the same effect.</p></section>
+  </main>
+
+  <script>
+    const glow = document.getElementById('glow');
+
+    function updateGlow() {
+      glow.style.top = `${window.scrollY}px`;
+    }
+
+    window.addEventListener('scroll', updateGlow);
+    window.addEventListener('resize', updateGlow);
+    document.addEventListener('DOMContentLoaded', updateGlow);
+  </script>
+
+</body>
+</html>
+

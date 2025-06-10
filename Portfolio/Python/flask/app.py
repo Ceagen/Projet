@@ -29,7 +29,7 @@ def test():
         try:
             db.session.add(new_task)
             db.session.commit()
-            return redirect('/')
+            return redirect('/test')
         except:
             return 'Task could not be added'
     else:
@@ -43,7 +43,7 @@ def delete(id):
     try:
         db.session.delete(task_to_delete)
         db.session.commit()
-        return redirect('/')
+        return redirect('/test')
     except:
         return 'Your task could not be deleted'
     
@@ -56,7 +56,7 @@ def update(id):
 
         try:
             db.session.commit()
-            return redirect('/')
+            return redirect('/test')
         except:
             return "Task update couldn't be done"
     else:
