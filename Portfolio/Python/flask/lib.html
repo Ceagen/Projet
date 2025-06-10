@@ -55,10 +55,11 @@
     .glow-line path {
       fill: none;
       stroke: #00ffff;
-      stroke-width: 2; /* slim glow */
+      stroke-width: 1; /* slim glow */
       filter:
         drop-shadow(0 0 3px #00ffff)
         drop-shadow(0 0 8px #00ffff);
+        transition: 10s;
     }
 
     section {
@@ -102,16 +103,25 @@
 
   <script>
     const glow = document.getElementById('glow');
+    let ticking = false;
 
     function updateGlow() {
-      glow.style.top = `${window.scrollY}px`;
+      const scrollY = window.scrollY;
+      glow.style.transform = `translateY(${scrollY}px)`;
+      ticking = false;
     }
 
-    window.addEventListener('scroll', updateGlow);
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateGlow);
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', updateGlow);
     document.addEventListener('DOMContentLoaded', updateGlow);
   </script>
-
 </body>
 </html>
 

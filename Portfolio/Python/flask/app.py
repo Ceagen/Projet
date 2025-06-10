@@ -20,6 +20,7 @@ class todo(db.Model):  # creating the columns for the database and specifying th
 def index():
     return render_template('index.html')
 
+#task manager options
 @app.route('/test', methods=['POST', 'GET'])
 def test():
     if request.method == 'POST':

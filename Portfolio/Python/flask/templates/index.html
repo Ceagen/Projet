@@ -3,9 +3,14 @@
 {% block body %}
 <div class="index-main">
     <div class="index-vid">
-        <video autoplay muted loop class="vid">
-            <source src="{{ url_for('static', filename='/img/Circuit-board.mp4') }}" type="video/mp4">
-        </video>
+        <div class="index-vid-container">
+            <video autoplay muted loop class="vid">
+                <source src="{{ url_for('static', filename='/img/Circuit-board.mp4') }}" type="video/mp4">
+            </video>
+            <div class="index-vid-intro">
+                <span class="intro-header"><h3>Welcome to my den Im Ceagen</h3></span>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
