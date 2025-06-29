@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ceagen webFlask</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <script src="{{url_for('static', filename='js/app.js')}}"></script>
     <script src="https://kit.fontawesome.com/02a74f5624.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -15,6 +18,30 @@
             <li><a href="#">Services</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
+            <li>
+                <i class="fa-solid fa-circle-user" id="userIcon"></i>
+            </li>
+            <!-- Login Overlay -->
+            <div class="login-overlay" id="loginOverlay">
+                <div class="login-form position-relative">
+                    <div class="close-btn" id="closeLogin">&times;</div>
+                    {% if user.is_logged_in %}
+                        <p class="text-center">Bienvenue, {{ user.username }}</p>
+                        <a href="{{ url_for('logout') }}" class="btn btn-danger w-100 mt-3">Déconnexion</a>
+                    {% else %}
+                        <form method="POST" action="{{ url_for('login') }}">
+                            <h5 class="text-center mb-3">Login</h5>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="username" placeholder="Username" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Login</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
         </ul>
     </nav>
     <!--<a href="https://github.com/Ceagen/Slots"><option value="slots" target="_blank">Slots</option></a>

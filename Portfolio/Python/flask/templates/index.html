@@ -5,11 +5,16 @@
     <div class="index-vid">
         <div class="index-vid-container">
             <video autoplay muted loop class="vid">
-                <source src="{{ url_for('static', filename='/img/Circuit-board.mp4') }}" type="video/mp4">
+                <source src="{{ url_for('static', filename='/img/OOT-Intro.mp4') }}" type="video/mp4">
             </video>
             <div class="index-vid-intro">
                 <span class="intro-header"><h3>Welcome to my den Im Ceagen</h3></span>
             </div>
+        </div>
+    </div>
+    <div class="index-container">
+        <div class="rotate-wrapper">
+            <img src="{{ url_for('static', filename='/img/blades.png') }}" alt="blades" class="autoRotate">
         </div>
     </div>
 </div>
