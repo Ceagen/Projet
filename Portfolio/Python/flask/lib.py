@@ -1,6 +1,5 @@
 import sqlite3
 import logging
-import datetime
 import os
 from werkzeug.security import generate_password_hash
 
@@ -65,3 +64,15 @@ name = 'Ceagen'
 pwd = '#Allen02walker'
 
 #createAuthentification(name,pwd)
+
+def getDateTask():
+	conn = get_db_connection()
+	cursor = conn.cursor()
+	try:
+		row = cursor.execute('SELECT date_created FROM todo')
+		row.fetchone()
+		return row['date_created']
+	except Exception as e:
+		print(f"There was an error: {e}")
+	finally:
+		conn.close()
